@@ -5,8 +5,7 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
-pandas = "*"
-click = "*"
+spacy = {version = "*", extras = ["apple"]}
 
 [dev-packages]
 ipython = "*"
