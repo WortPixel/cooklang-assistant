@@ -4,13 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-nltk = "*"
 streamlit = "*"
-ipython = "*"
-spacy-streamlit = "*"
 pandas = "*"
 
 [dev-packages]
+ipython = "*"
 
 [requires]
 python_version = "3.11"

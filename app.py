@@ -39,20 +39,6 @@ input = input.strip()
 
 nlp = spacy.load(lang_config[language])
 doc = nlp(input)
-for sent in doc.sents:
-    st.write(sent)
-    st.write(" ".join([f"{word} ({word.pos_}, {word.tag_}, {word.dep_})" for word in sent]))
-
-st.write("Noun chunks")
-roots = []
-for chunk in doc.noun_chunks:
-    st.write(f"{chunk.text}, {chunk.root.text}, {chunk.root.dep_}, {chunk.root.head.text}")
-    roots.append(chunk.root.text)
-    st.divider()
-for word in doc:
-    if str(word) in roots:
-        st.write(f"{word}: {[child for child in word.children if child.pos_ in ['NOUN', 'PROPN']]}")
-
 nouns = sorted(set([str(word).strip() for word in doc if word.pos_ in ["NOUN", "PROPN"]]))
 
 st.header("Semantische Informationen hinterlegen")
